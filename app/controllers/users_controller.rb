@@ -1,0 +1,49 @@
+class UsersController < ApplicationController
+  before_action :set_user,
+  only: [:logout, :payment, :identification, :update, :new1, :show ]
+
+
+  def new1
+    render "users/new/signin1"
+  end
+  def new2
+    render "users/new/signin2"
+  end
+  def new3
+    render "users/new/signin3"
+  end
+  def new4
+    render "users/new/signin4"
+  end
+  def new5
+    render "users/new/signin5"
+  end
+  
+  def new
+  end
+
+
+  def create
+    
+  end
+
+  def update
+    
+  end
+
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email,
+     :family_name, :first_name, :family_name_kana, :first_name_kana,
+     :birth_year, :birth_month, :birth_date)
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+
+end

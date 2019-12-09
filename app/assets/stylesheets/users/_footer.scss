@@ -1,0 +1,154 @@
+.footer-wrapper {
+  width: 100vw;
+  position: relative; 
+
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+
+}
+
+li {
+  margin: 16px 0 0 0;
+}
+
+a {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+small {
+  color: #ffffff;
+}
+
+.mercari {
+  width: 100%;
+  height: 300px;
+}  
+
+aside {
+  width: 100%;
+  height: 260px;
+  background-image: url("/images/fine-dining-free-img-300x200.jpg");
+  .app-banner {
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    &__inner {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      h2 {
+
+      }
+      p {
+        color: #ffffff;
+        font-size: 24px;
+        margin: 10px 0 0;
+      }
+      .app-banner__icon {  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0;
+
+        a {
+          width: 133px;
+          margin: 0 0 0 20px;
+        }
+      }   
+    }
+    .sample {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+    }
+  }
+
+}
+
+footer.a_footer {
+  width: calc(100% - 40px);
+  background-color: #212121;
+  position: relative;
+  bottom: 0;
+  padding: 0 20px 30px;
+
+  .about, .help, .privacy, .country ,.privacy2{
+    ul li a{
+      color: rgb(209, 202, 202);
+    }
+    ul li a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav.footer_nav {
+      margin: 0 auto;
+      width: 700px;
+      .about, .help, .privacy, .country ,.privacy2{
+        width: 340px;
+        display: inline-block;
+        vertical-align:  top;
+        margin: 30px 0 0 0;
+      }
+    }
+
+  }
+
+  @media (min-width: 768px) {
+    nav.footer_nav {
+      margin: 0 auto;
+      width: 700px;
+      .about, .help, .privacy, .country ,.privacy2{
+        width: 340px;
+        display: inline-block;
+        vertical-align:  top;
+        margin: 30px 0 0 0;
+      }
+    }
+  }
+
+  @media (min-width: 1068px) {
+    nav.footer_nav {
+      margin: 0 auto;
+      width: fit-content;
+      .about, .help, .privacy, .country ,.privacy2{
+        width: fit-content;
+        display: inline-block;
+        vertical-align:  top;
+        margin: 18px 25px 0 0;
+      }
+    }
+  }
+
+  .mercari_logo {
+    color: #ffffff;
+    margin: 30px auto 20px;
+    width: 75%;
+    text-align: center;
+    a {
+      float: left;
+      line-height: 31px;
+    }
+
+    span.footer-copyright {
+      font-size: 10px;
+      display: inline-block;
+      text-align: center;
+      margin: 0 0 0 -100px;
+    }
+  }
+}
+}

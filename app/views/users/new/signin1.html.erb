@@ -1,0 +1,63 @@
+<header class="user_new user_new1">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<div class="contents_wrapper1">
+  <section class="l-single-container">
+    <h3>会員情報入力</h3>
+    <%= form_for @user, url: user_path(@user.id), method:"patch" do |f| %>
+    <div class="form__inputs">
+      <p>ニックネーム<span class="white_in_red">必須</span></p>
+      <%=f.text_field :nickname, class: "group1", placeholder: "例）メルカリ太郎" %>
+      <p>メールアドレス<span class="white_in_red">必須</span></p>
+      <%=f.text_field :email, class: "group1", placeholder: "PC・携帯どちらでも可" %>
+
+  <div class=form-group>
+    <h4>本人確認</h4>
+    <p class=text>安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。</p>
+    <p>お名前(全角)<span class="white_in_red">必須</span></p>
+    <div style="display:inline-flex">
+      <%=f.text_field :family_name, class: "group2", placeholder: "例）山田"%>
+      <%=f.text_field :first_name, class: "group2", placeholder: "例）彩"%>
+    </div>
+    <p>お名前カナ(全角)<span class="white_in_red">必須</span></p>
+    <div style="display:inline-flex">
+      <%=f.text_field :family_name_kana,class:"group2",placeholder:"例）ヤマダ"%>
+      <%=f.text_field :first_name_kana, class:"group2", placeholder:"例）アヤ"%>
+    </div>
+    <div class=form-group>
+      <p>生年月日<span class="white_in_red">必須</span></p>
+    <br>
+      <div class="birthday-select-wrap">
+        <div class="select-wrap">
+          <div style="display:inline-flex">
+            <%=f.select :birth_year, (1900..2030).to_a.collect{|y| [y,y]}.unshift(["--",""])%>
+              <span id="date">年</span>
+            <%=f.select :birth_month, (1..12).to_a.collect{|m| [m,m]}.unshift(["--",""])%>
+              </select><span id="date">月</span>
+            <%=f.select :birth_date, (1..31).to_a.collect{|d| [d,d]}.unshift(["--",""])%>
+              </select><span id="date">日</span>
+          </div>
+          <div class=form-group>
+            <p class=form-info>※ 本人情報は正しく入力してください｡会員登録後､修正するにはお時間を頂く場合があります｡</p>
+          <div class=form-group>
+
+          <div class="rc-anchor-center-container">
+            <label class="rc-anchor-center-item rc-anchor-checkbox-label" aria-hidden="true" role="presentation" id="recaptcha-anchor-label">
+              <span aria-live="polite" aria-labelledby="recaptcha-accessible-status"></span>私はロボットではありません
+            </label>
+          </div>
+        <div class=form-group>
+          <p class=text>「次へ進む」のボタンを押すことにより、<a href="#" >利用規約</a>に同意したものとみなします</p>
+          <%=f.submit "情報を登録して、次へ進む", class:"button white_in_red"%>
+
+          <%=link_to new2_users_path do%>
+          <button type="button" class="white_in_red">登録せず、次へ進む</button>
+          <%end%>
+        </div>
+      <div class=form-group__text-right>
+        <p class=text-right><a href="#">本人情報の登録について></a></p>
+      </div>
+    <%end%>
+  </section>
+</div>
+<%= render partial: "users/new/ufooter" %>
