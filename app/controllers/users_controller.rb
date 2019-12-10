@@ -28,7 +28,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    
+    if @user.update(user_params)
+      redirect_to new2_users_path
+    else
+      render :new1
+    end
+  end
+  def identification
   end
 
 
