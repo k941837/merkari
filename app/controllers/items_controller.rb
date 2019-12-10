@@ -18,6 +18,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      # @item.category.update(items_size: @item.category.items.size)
+      if params[:item_images]
+        image_params[:image].each do |img|
+          @item.images.create(image: img)
+        end
+      end
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
 
 
   def new
